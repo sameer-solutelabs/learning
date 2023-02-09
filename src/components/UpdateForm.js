@@ -12,7 +12,10 @@ const UpdateForm = () => {
     const [addusersId,setaddUsersId] = useState("")
     const [addtitle,setaddTitle] = useState("")
     const [addbody,setaddBody] = useState("")
-    
+
+    const [issucess,setIsSuccess] = useState(false);
+
+  
     useEffect(()=>{   
         console.log("useeffect")     
         fetch("https://jsonplaceholder.typicode.com/posts").then((result)=>{
@@ -79,7 +82,11 @@ const UpdateForm = () => {
 
        }).then((result)=>{
         console.log("result",result)
-       })
+        setIsSuccess(true);
+        setTimeout(() => {
+            setIsSuccess(false);
+        }, 1000);
+       }).catch(error => console.log("APi error"))
     }
     
           
@@ -94,6 +101,12 @@ const UpdateForm = () => {
                     <input type="text" name="name" value={addtitle}  onChange={(e)=>{setaddTitle(e.target.value)}} /><br/><br/><br/>
                     <input type="text" name="name" value={addbody}  onChange={(e)=>{setaddBody(e.target.value)}} /><br/><br/><br/>        
                     <button onClick={(e)=>{e.preventDefault();addUser()}}>Add User</button>
+                    {issucess ?
+                        <p>User added Successfully</p> : ""
+                    }
+                        
+            
+                    
                 </form>
             </div>
             <div className='col-50'>
