@@ -104,9 +104,6 @@ const UpdateForm = () => {
                     {issucess ?
                         <p>User added Successfully</p> : ""
                     }
-                        
-            
-                    
                 </form>
             </div>
             <div className='col-50'>

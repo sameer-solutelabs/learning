@@ -1,20 +1,18 @@
 import './App.css';
 import ForwardrefLayout from './components/UseRef/ForwardrefLayout';
 import AddUser from './components/AddUser';
-import TodoList from './components/TodoList';
 import UpdateForm from './components/UpdateForm';
-import FirstTodo1 from './components/Todo1/FirstTodo1';
+import Todo2MainLayout from './components/Todo2/Todo2MainLayout';
+
 
 function App() {
   return (
     <div className="App">
-      {/* <ForwardrefLayout />
-   
-      <TodoList /> */}
-      {/* <AddUser /> */}
-      <UpdateForm />
-
-      {/* <FirstTodo1 /> */}
+      {/* <ForwardrefLayout />*/}
+      {/* <AddUser />
+      <UpdateForm /> */}
+      <Todo2MainLayout />
+      {/* <Todo1 /> */}
     </div>
   );
 }
